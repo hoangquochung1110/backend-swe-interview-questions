@@ -102,7 +102,10 @@ The answers to those questions are based on my humble knowledge. If you find som
 1. What is process, thread? What are the differences between them?
    <details>
    <summary>Answer</summary>
-   Simply put, process is a running program. When we run a program, in the background the OS load the program from disk to memory. Thread is much like a process except one difference: threads share the same address space. In additional, threads also have thread-local storage.
+   Simply put, process is a running program. Program itself is just set of instruction stored in disk.
+   When we run a program (by double click on the icon representing the program or enter the program name in CLI), in the background the OS load the program from disk to memory and transform instructions into sth useful.
+
+   Thread is much like a process except one difference: threads share the same address space. In additional, threads also have thread-local storage.
    </details>
 
    - What data process, thread need to live? Why they said that Thread is a lightweight process?
