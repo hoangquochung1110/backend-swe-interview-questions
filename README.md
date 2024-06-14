@@ -100,9 +100,38 @@ The answers to those questions are based on my humble knowledge. If you find som
 [Answers here](/answers/os.md#topic-operating-system)
 
 1. What is process, thread? What are the differences between them?
+   <details>
+   <summary>Answer</summary>
+   Simply put, process is a running program. When we run a program, in the background the OS load the program from disk to memory. Thread is much like a process except one difference: threads share the same address space. In additional, threads also have thread-local storage.
+   </details>
 
    - What data process, thread need to live? Why they said that Thread is a lightweight process?
+      <details>
+      <summary>Answer</summary>
+      Both process and thread have memory management in common:
+         - Data segment: where instruction, global variables live
+         - Stack: contains temporary data: local variables, function calls and function returns, etc. Along with, we have stack pointer to indicate the last item added to stack
+         - Heap: memory that is dynamically allocated during process run time
+         - Program counter: tell which instruction to execute next
+      However, each thread has its own stack.
+
+      Process is presented by the OS by Process Control Block (PCB), similarly TCB in thread context:
+         - Process state: ready, running and blocked..
+         - Program counter: tell us the next instruction to execute.
+         - CPU register
+         - CPU-scheduling information
+         - I/O information
+
+      That's why people said that thread is a lightweight process
+      </details>
    - How CPU switch (context switch) between processes/threads? How data is to ensure safety? (in case single CPU core and multiple CPU cores)
+      <details>
+         <summary>Answer</summary>
+         OS maintains a **process list** containing information about all processes. Each entry is PCB.
+         When process context switch happens, OS save state of current process (state,  values of CPU registers, PC and stack pointer) to PCB, thus this process can be resumed later then restore said pieces of data from soon-to-be-executed process.
+
+         Thread context switch works the same way but the address space remains the same.
+      </details>
    - What is multi-process and multi-thread? When we should you which one?
      - Process has how many states? How does it change between each state?
      - Scheduling algorithm
@@ -110,9 +139,19 @@ The answers to those questions are based on my humble knowledge. If you find som
      - How CPU detects that a thread is sleeping? Or detect when it wants to run?
    - What is thread-pool? How to use it? Describe how to create a thread-pool in your programming language
    - Can 2 different processes access or change data of each other address space? (this question may make you confuse with your knowledge about virtual memory)
+   <details>
+      <summary>Answer</summary>
+      No, they can't. Each process has its own virtual address space.
+   </details>
      - Can 2 processes use the same library (for eg: libc is required to every process)? How?
      - How does debugger work? How it can attach to a running process and change data of that process?
    - How 2 processes can communicate with each other? (There are a lot of ways but focus on the OS's way)
+      <details>
+         <summary>Answer</summary>
+         There're 2 main models of inter-process communication:
+            - memory sharing
+            - message passing
+      </details>
    - What is child-process? How to create a child-process?
      - What data a child-process have when we create it?
      - Can it read/write data on it's parent process?
