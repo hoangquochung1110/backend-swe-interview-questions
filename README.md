@@ -127,14 +127,16 @@ The answers to those questions are based on my humble knowledge. If you find som
 
       That's why people said that thread is a lightweight process
       </details>
+
    - How CPU switch (context switch) between processes/threads? How data is to ensure safety? (in case single CPU core and multiple CPU cores)
       <details>
-         <summary>Answer</summary>
-         OS maintains a **process list** containing information about all processes. Each entry is PCB.
-         When process context switch happens, OS save state of current process (state,  values of CPU registers, PC and stack pointer) to PCB, thus this process can be resumed later then restore said pieces of data from soon-to-be-executed process.
+      <summary>Answer</summary>
+      OS maintains a **process list** containing information about all processes. Each entry is PCB.
+      When process context switch happens, OS save state of current process (state,  values of CPU registers, PC and stack pointer) to PCB, thus this process can be resumed later then restore said pieces of data from soon-to-be-executed process.
 
-         Thread context switch works the same way but the address space remains the same.
+      Thread context switch works the same way but the address space remains the same.
       </details>
+
    - What is multi-process and multi-thread? When we should you which one?
      - Process has how many states? How does it change between each state?
      - Scheduling algorithm
@@ -142,19 +144,19 @@ The answers to those questions are based on my humble knowledge. If you find som
      - How CPU detects that a thread is sleeping? Or detect when it wants to run?
    - What is thread-pool? How to use it? Describe how to create a thread-pool in your programming language
    - Can 2 different processes access or change data of each other address space? (this question may make you confuse with your knowledge about virtual memory)
-   <details>
+      <details>
       <summary>Answer</summary>
-      No, they can't. Each process has its own virtual address space.
-   </details>
+         No, they can't. Each process has its own virtual address space.
+      </details>
+
      - Can 2 processes use the same library (for eg: libc is required to every process)? How?
      - How does debugger work? How it can attach to a running process and change data of that process?
    - How 2 processes can communicate with each other? (There are a lot of ways but focus on the OS's way)
       <details>
-         <summary>Answer</summary>
-         There're 2 main models of inter-process communication:
-            - memory sharing
-            - message passing
+      <summary>Answer</summary>
+      There're 2 main models of inter-process communication: memory sharing and message passing.
       </details>
+
    - What is child-process? How to create a child-process?
      - What data a child-process have when we create it?
      - Can it read/write data on it's parent process?
