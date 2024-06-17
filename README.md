@@ -118,12 +118,7 @@ The answers to those questions are based on my humble knowledge. If you find som
          - Program counter: tell which instruction to execute next
       However, each thread has its own stack.
 
-      Process is presented by the OS by Process Control Block (PCB), similarly TCB in thread context:
-         - Process state: ready, running and blocked..
-         - Program counter: tell us the next instruction to execute.
-         - CPU register
-         - CPU-scheduling information
-         - I/O information
+      Process is presented by the OS by Process Control Block (PCB), similarly TCB in thread context: - Process state: ready, running and blocked.. - Program counter: tell us the next instruction to execute. - CPU register - CPU-scheduling information - I/O information
 
       That's why people said that thread is a lightweight process
       </details>
@@ -151,6 +146,7 @@ The answers to those questions are based on my humble knowledge. If you find som
 
      - Can 2 processes use the same library (for eg: libc is required to every process)? How?
      - How does debugger work? How it can attach to a running process and change data of that process?
+
    - How 2 processes can communicate with each other? (There are a lot of ways but focus on the OS's way)
       <details>
       <summary>Answer</summary>
@@ -175,6 +171,10 @@ The answers to those questions are based on my humble knowledge. If you find som
 
    - What is virtual memory? Why do we need it? How does it work?
      - How large virtual memory is?
+		<details>
+		<summary>Answer</summary>
+		The size of virtual memory is limited by processor architecture (32 or 64 bit), the OS's implementation and the size of secondary memory (hard drives or SSDs) available for use as swap space
+		</details>
      - What is paging?
      - Can 2 processes map to the same physical address? How and in which case?
    - What is heap space and stack space?
