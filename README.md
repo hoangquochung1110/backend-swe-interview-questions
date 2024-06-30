@@ -126,7 +126,7 @@ The answers to those questions are based on my humble knowledge. If you find som
    - How CPU switch (context switch) between processes/threads? How data is to ensure safety? (in case single CPU core and multiple CPU cores)
       <details>
       <summary>Answer</summary>
-      OS maintains a **process list** containing information about all processes. Each entry is PCB.
+      OS maintains a data structure containing information about all processes. Each entry is Process Control Block (PCB).
       When process context switch happens, OS save state of current process (state,  values of CPU registers, PC and stack pointer) to PCB, thus this process can be resumed later then restore said pieces of data from soon-to-be-executed process.
 
       Thread context switch works the same way but the address space remains the same.
