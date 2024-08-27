@@ -112,10 +112,12 @@ The answers to those questions are based on my humble knowledge. If you find som
       <details>
       <summary>Answer</summary>
       Both process and thread have memory management in common:
-         - Data segment: where instruction, global variables live
-         - Stack: contains temporary data: local variables, function calls and function returns, etc. Along with, we have stack pointer to indicate the last item added to stack
-         - Heap: memory that is dynamically allocated during process run time
-         - Program counter: tell which instruction to execute next
+      <ol>
+         <li>Data segment: where instruction, global variables live</li>
+         <li>Stack: contains temporary data: local variables, function calls and function returns, etc. Along with, we have stack pointer to indicate the last item added to stack</li>
+         <li>Heap: memory that is dynamically allocated during process run time</li>
+         <li>Program counter: tell which instruction to execute next.</li>
+      </ol>
       However, each thread has its own stack.
 
       Process is presented by the OS by Process Control Block (PCB), similarly TCB in thread context: - Process state: ready, running and blocked.. - Program counter: tell us the next instruction to execute. - CPU register - CPU-scheduling information - I/O information
@@ -163,6 +165,11 @@ The answers to those questions are based on my humble knowledge. If you find som
 2. Concurrency vs Parallels? (in case single CPU core and multiple CPU cores)
 
    - What is critical zone?
+      <details>
+      <summary>Answer</summary>
+      Critical section is a piece of code that accesses a shared variable (or more generally a shared resource)
+      and must not be concurrently executed by more than one thread.
+      </details>
    - What is race condition and how to handle this case?
    - What is locking mechanism? mutex? semaphore? spinlock? read lock vs write lock?
    - What is deadlock and how to avoid deadlock?
