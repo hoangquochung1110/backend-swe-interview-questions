@@ -120,9 +120,9 @@ The answers to those questions are based on my humble knowledge. If you find som
       </ol>
       However, each thread has its own stack.
 
-      Process is presented by the OS by Process Control Block (PCB), similarly TCB in thread context: - Process state: ready, running and blocked.. - Program counter: tell us the next instruction to execute. - CPU register - CPU-scheduling information - I/O information
+     Process is presented by the OS by Process Control Block (PCB), similarly TCB in thread context: - Process state: ready, running and blocked.. - Program counter: tell us the next instruction to execute. - CPU register - CPU-scheduling information - I/O information
 
-      That's why people said that thread is a lightweight process
+     That's why people said that thread is a lightweight process
       </details>
 
    - How CPU switch (context switch) between processes/threads? How data is to ensure safety? (in case single CPU core and multiple CPU cores)
@@ -131,7 +131,7 @@ The answers to those questions are based on my humble knowledge. If you find som
       OS maintains a data structure containing information about all processes. Each entry is Process Control Block (PCB).
       When process context switch happens, OS save state of current process (state,  values of CPU registers, PC and stack pointer) to PCB, thus this process can be resumed later then restore said pieces of data from soon-to-be-executed process.
 
-      Thread context switch works the same way but the address space remains the same.
+     Thread context switch works the same way but the address space remains the same.
       </details>
 
    - What is multi-process and multi-thread? When we should you which one?
@@ -178,10 +178,10 @@ The answers to those questions are based on my humble knowledge. If you find som
 
    - What is virtual memory? Why do we need it? How does it work?
      - How large virtual memory is?
-		<details>
-		<summary>Answer</summary>
-		The size of virtual memory is limited by processor architecture (32 or 64 bit), the OS's implementation and the size of secondary memory (hard drives or SSDs) available for use as swap space
-		</details>
+     <details>
+     <summary>Answer</summary>
+     The size of virtual memory is limited by processor architecture (32 or 64 bit), the OS's implementation and the size of secondary memory (hard drives or SSDs) available for use as swap space
+     </details>
      - What is paging?
      - Can 2 processes map to the same physical address? How and in which case?
    - What is heap space and stack space?
